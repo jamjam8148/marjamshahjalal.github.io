@@ -71,11 +71,25 @@ body {
     text-align: center;
 }
 
+/* Image styles */
 .logo {
     width: 150px;
-    margin-bottom: 20px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
+.main-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Text styles */
 .intro-text {
     font-size: 1.5em;
     color: #555;
@@ -88,15 +102,6 @@ body {
     color: #666;
     line-height: 1.6;
     margin-top: 15px;
-}
-
-.main-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-top: 30px;
-    border: 5px solid #ddd;
-    border-radius: 10px;
 }
 
 /* Footer styles */
