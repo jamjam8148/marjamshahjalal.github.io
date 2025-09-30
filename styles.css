@@ -1,24 +1,14 @@
-/*
- * Color Scheme:
- * Primary Background: #f4f4f4 (Light Gray)
- * Primary Text: #333 (Dark Gray/Black)
- * Accent Color (for headers/footer/navbar background): #007bff (Vibrant Blue)
- * Highlight/Hover Color (good contrast): #ffc107 (Amber/Yellow)
- * Sub-Menu Background: #0056b3 (Darker Blue)
- */
-
-/* === General Styles and Color Scheme === */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Primary Background */
-    color: #333; /* Primary Text */
+    background-color: #f4f4f4; 
+    color: #333; 
     text-align: center;
 }
 
 header {
-    background-color: #007bff; /* Accent Color */
+    background-color: #007bff; 
     color: #fff;
     padding: 1em 0;
 }
@@ -29,14 +19,13 @@ h1 {
 }
 
 .container {
-    width: 90%; /* Increased for better mobile look */
+    width: 90%; 
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
     padding: 20px 0;
 }
 
-/* Existing element styles */
 .logo {
     width: 150px;
     margin-bottom: 20px;
@@ -67,139 +56,122 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* === Navigation Menu Styles === */
 
-/* The main navigation bar */
 .navbar {
-    background-color: #007bff; /* Accent Color */
+    background-color: #007bff; 
     padding: 0;
     margin-top: 10px;
 }
 
-/* The unordered list that holds the menu items */
 .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* For horizontal layout on desktop */
+    display: flex; 
     justify-content: center;
 }
 
-/* Main menu items (Home, About, etc.) */
 .navbar ul li {
-    position: relative; /* Essential for dropdown positioning */
+    position: relative; 
     text-align: center;
 }
 
-/* Navigation Links - Styling for the anchors */
 .navbar ul li a {
     display: block;
     padding: 15px 20px;
     text-decoration: none;
     color: #fff;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Prevents text wrap on menu items */
+    white-space: nowrap; 
 }
 
-/* Rollover Effects - Visual feedback on hover */
 .navbar ul li a:hover {
-    background-color: #0056b3; /* Darker blue on hover for primary links */
-    color: #ffc107; /* Highlight Color */
+    background-color: #0056b3; 
+    color: #ffc107; 
 }
 
-/* === Dropdown/Interactive Feature (Submenus) === */
 
-/* Hide the sub-menu by default */
 .navbar ul ul {
     display: none;
     position: absolute;
-    top: 100%; /* Position right below the parent link */
+    top: 100%; 
     left: 0;
-    background-color: #0056b3; /* Darker Blue */
-    flex-direction: column; /* Stacks sub-menu items vertically */
-    min-width: 180px; /* Ensure sub-menu has a decent width */
-    z-index: 10; /* Ensure it stays above other content */
+    background-color: #0056b3; 
+    flex-direction: column; 
+    min-width: 180px; 
+    z-index: 10; 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Rollover Effect to show the dropdown */
 .navbar ul li:hover > ul {
-    display: flex; /* Show the sub-menu on hover */
+    display: flex; 
 }
 
-/* Sub-menu links styling */
 .navbar ul ul li {
-    width: 100%; /* Full width of the sub-menu container */
+    width: 100%; 
 }
 
-/* Rollover Effects for sub-menu links */
 .navbar ul ul li a:hover {
-    background-color: #003f7f; /* Even darker blue on hover */
-    color: #ffc107; /* Highlight Color */
+    background-color: #003f7f; 
+    color: #ffc107; 
 }
 
 
-/* === Responsive Design: Mobile Menu Icon (Hamburger) === */
 
 .menu-toggle {
-    display: none; /* Hidden by default on desktop */
+    display: none; 
     font-size: 30px;
     cursor: pointer;
     color: #fff;
     padding: 10px 20px;
 }
 
-/* Hide the checkbox used for toggling */
 #menu-checkbox {
     display: none;
 }
 
 
-/* === Responsive Design: Media Query for Mobile Devices === */
 @media (max-width: 768px) {
     
-    /* Show the hamburger icon */
+    
     .menu-toggle {
         display: block;
         text-align: right;
         margin-right: 20px;
     }
 
-    /* Stack list items vertically for mobile */
     .navbar ul {
         flex-direction: column;
         width: 100%;
         text-align: left;
-        display: none; /* Hide the menu by default */
+        display: none; 
     }
 
     .navbar li {
         border-top: 1px solid #0056b3;
     }
 
-    /* When the checkbox is checked, show the menu */
     #menu-checkbox:checked ~ ul {
         display: flex;
     }
 
-    /* Sub-menu on mobile */
     .navbar ul ul {
-        position: static; /* Allows sub-menu to flow naturally below parent */
+        position: static; 
         width: 100%;
         box-shadow: none;
         background-color: #0056b3;
-        border-left: 5px solid #ffc107; /* Visual cue that it's a sub-menu */
+        border-left: 5px solid #ffc107; 
     }
 
     .navbar ul li:hover > ul {
-        display: flex; /* Keep showing on hover, but use :checked for the main toggle */
+        display: flex; 
     }
 }
 
 
 /* === Footer Styles === */
 footer {
-    background-color: #007bff; /* Accent Color */
+    background-color: #007bff; 
     color: #fff;
     padding: 1em 0;
     margin-top: 50px;
@@ -212,11 +184,12 @@ footer .links a {
 }
 
 footer .links a:hover {
-    color: #ffc107; /* Highlight Color on hover */
+    color: #ffc107; 
     text-decoration: underline;
 }
 
 .copyright {
     margin-top: 10px;
     font-size: 0.9em;
+
 }
