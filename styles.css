@@ -56,7 +56,6 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
 .navbar {
     background-color: #007bff; 
     padding: 0;
@@ -90,7 +89,6 @@ h1 {
     color: #ffc107; 
 }
 
-
 .navbar ul ul {
     display: none;
     position: absolute;
@@ -116,8 +114,6 @@ h1 {
     color: #ffc107; 
 }
 
-
-
 .menu-toggle {
     display: none; 
     font-size: 30px;
@@ -130,10 +126,7 @@ h1 {
     display: none;
 }
 
-
 @media (max-width: 768px) {
-    
-    
     .menu-toggle {
         display: block;
         text-align: right;
@@ -168,7 +161,6 @@ h1 {
     }
 }
 
-
 /* === Footer Styles === */
 footer {
     background-color: #007bff; 
@@ -191,10 +183,11 @@ footer .links a:hover {
 .copyright {
     margin-top: 10px;
     font-size: 0.9em;
-
 }
+
+/* === MPG Calculator Styles === */
 .calculator {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
