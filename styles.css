@@ -161,7 +161,7 @@ h1 {
     }
 }
 
-/* === Footer Styles === */
+/* Footer */
 footer {
     background-color: #007bff; 
     color: #fff;
@@ -185,9 +185,9 @@ footer .links a:hover {
     font-size: 0.9em;
 }
 
-/* === MPG Calculator Styles === */
+/* Calculator Styles */
 .calculator {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
