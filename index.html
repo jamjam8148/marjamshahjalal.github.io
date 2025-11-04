@@ -1,11 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marjam Shahjalal</title>
-    <link rel="stylesheet" href="styleset" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+    <link rel="stylesheet" href="ylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/all.min.css
+</head>
+<body>
+
+    <header>
         <h1>Marjam Shahjalal</h1>
         
         <nav class="navbar">
@@ -20,21 +23,23 @@
                 <li>
                     #projectsProjects & Skills</a>
                     <ul>
-                        <li><a href="#networkking</a></li>
+                        <li><a href="#networkingg</a></li>
                         <li>#securitySecurity</a></li>
                         <li>#webdevWeb Dev</a></li>
                     </ul>
                 </li>
                 <li>#careerCareer</a></li>
                 <li><a href="#calislisthenics</a></li>
-                <li><a href="#contacta></li>
+                <li>#contactContact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container" id="home">
-        <img src="mylogo.jpg" alt="Marjam's Logo" class="to Marjam's Github page!</p>
-        <img src="marjamsphoto.jpg" class="mainon id="about" class="container">
+        <img src="mylogo.jpg" alt="Marjam's Logo" class="logoarjam's Github page!</p>
+        <img src="marjamsphoto/div>
+
+    <section id="about" class="container">
         <h2>About Me</h2>
         <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security! I'm also a full time Help Desk Technician and Calisthenics athlete. This section provides more detail on my background and interests.</p>
     </section>
@@ -53,16 +58,18 @@
             <p>I have built a lab with Ubuntu, Splunk, and Kali Linux to simulate penetration testing with machines on an Active Directory network utilizing Atomic Red Team.</p>
         </div>
 
+        <!-- ✅ Added Web Dev Section with Calculator -->
         <div id="webdev">
             <h3>Web Dev Projects 💻</h3>
             <p>This MPG calculator demonstrates basic front-end development using HTML, CSS, and JavaScript.</p>
 
             <div class="calculator">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Calculator_icon.svg/1024px-Calculator_icon.svg.png" alt="Calculator Logo" style="width:80px; margin-bottom    <input type="number" id="miles" placeholder="Miles Traveled">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Calculator_icon.svg/1024px-Calculator_icon.svg.png" alt="CalculatorPer Gallon Calculator</h4>
+                <input type="number" id="miles" placeholder="Miles Traveled">
                 <input type="number" id="gallons" placeholder="Gallons of Gas Used">
                 <br>
                 <button onclick="calculateMPG()">Calculate MPG</button>
-                <div id="result" style="margin-top:10px; font-weight:bold;"></div>
+                <div id="result"></div>
             </div>
         </div>
     </section>
@@ -87,7 +94,7 @@
 
     <footer>
         <div class="links">
-            <a href="https://github.com/jamjam8148/BIS23_Marjam_Shahub</a>
+            <a href="https://github.com/jamjam8148/BIS23hahjalal
             <a href="https://www.linkedin.com/in/marjam-shahjalal-/LinkedIn</a>
         </div>
         <div class="copyright">
@@ -95,12 +102,13 @@
         </div>
     </footer>
 
+    <!-- ✅ Calculator Script -->
     <script>
         function calculateMPG() {
             const miles = parseFloat(document.getElementById('miles').value);
             const gallons = parseFloat(document.getElementById('gallons').value);
 
-            if (isNaN(miles) || isNaN(gallons) || gallons === 0) {
+            if (isNaN(miles) || isNaN(gallons) || gallons <= 0) {
                 document.getElementById('result').innerText = "Please enter valid numbers.";
                 return;
             }
