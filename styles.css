@@ -56,6 +56,7 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+
 .navbar {
     background-color: #007bff; 
     padding: 0;
@@ -89,6 +90,7 @@ h1 {
     color: #ffc107; 
 }
 
+
 .navbar ul ul {
     display: none;
     position: absolute;
@@ -114,6 +116,8 @@ h1 {
     color: #ffc107; 
 }
 
+
+
 .menu-toggle {
     display: none; 
     font-size: 30px;
@@ -126,7 +130,10 @@ h1 {
     display: none;
 }
 
+
 @media (max-width: 768px) {
+    
+    
     .menu-toggle {
         display: block;
         text-align: right;
@@ -161,6 +168,7 @@ h1 {
     }
 }
 
+
 /* === Footer Styles === */
 footer {
     background-color: #007bff; 
@@ -183,57 +191,101 @@ footer .links a:hover {
 .copyright {
     margin-top: 10px;
     font-size: 0.9em;
+
 }
 
-/* === MPG Calculator Styles === */
-.calculator {
+/* === NEW Calculator Styles === */
+#mpg-calculator {
+    margin-top: 40px;
     background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: inline-block;
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
 }
 
-.calculator h4 {
-    margin-bottom: 15px;
+.calculator-card {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
     color: #007bff;
 }
 
-.calculator input {
-    margin: 10px 5px;
+.input-group input[type="number"] {
+    width: 100%;
     padding: 10px;
-    width: 80%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s;
 }
 
-.calculator button {
-    padding: 10px 20px;
-    background-color: #007bff;
+.input-group input[type="number"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+button {
+    background-color: #28a745; 
     color: white;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.calculator button:hover {
-    background-color: #0056b3;
-}
-
-.calculator #result {
-    margin-top: 15px;
+    font-size: 1.1em;
     font-weight: bold;
-    color: #333;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px #1e7e34; /* Darker green for a 3D effect */
+    margin-top: 10px;
+    width: 100%;
 }
 
-.calc-logo {
-    width: 80px;
-    margin-bottom: 10px;
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    background-color: #1c7430;
+    box-shadow: 0 2px #1e7e34;
+    transform: translateY(2px);
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+}
+
+.result-box p {
+    margin: 0;
+}
+
+.result {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #dc3545; /* A strong color to highlight the result */
+    margin-top: 5px !important;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 20px;
 }
