@@ -6,6 +6,8 @@
     <title>Marjam Shahjalal</title>
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="mortgage_calculator.js"></script>
 </head>
 <body>
 
@@ -21,6 +23,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#mpg-calculator">MPG Calculator</a></li>
+                <li><a href="#mortgage-calculator">Mortgage Calculator</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li>
                     <a href="#projects">Projects & Skills</a>
@@ -91,6 +94,40 @@
             <p class="error-message" id="errorMessage"></p>
         </div>
     </section>
+    <section id="mortgage-calculator" class="container">
+        <h2>Home Mortgage Calculator 🏠</h2>
+        
+        <p class="bio-text" style="font-size: 1em; color: #333;">
+            To use the Home Mortgage Calculator, enter the **amount of the mortgage** (e.g., 200000), the **annual interest rate** (e.g., 6.5), and the **total number of years** (e.g., 30).
+        </p>
+
+        <div class="calculator-card">
+            
+            <form name="Form1">
+                <div class="input-group">
+                    <label for="Amount">Mortgage Amount (No $, No commas):</label>
+                    <input type="text" name="Amount" id="Amount" placeholder="e.g., 200000">
+                </div>
+                
+                <div class="input-group">
+                    <label for="Rate">Annual Interest Rate (%):</label>
+                    <input type="text" name="Rate" id="Rate" placeholder="e.g., 6.5">
+                </div>
+                
+                <div class="input-group">
+                    <label for="Years">Years for Loan:</label>
+                    <input type="text" name="Years" id="Years" placeholder="e.g., 30">
+                </div>
+                
+                <button type="button" onclick="mortCalc(this.form)">Calculate Monthly Payment</button>
+                
+                <div class="result-box">
+                    <p>Estimated Monthly Payment:</p>
+                    <input type="text" name="Payment" id="Payment" value="--" readonly class="result">
+                </div>
+            </form>
+        </div>
+    </section>
     <section id="about" class="container">
         <h2>About Me</h2>
         <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security! I'm also a full time Help Desk Technician and Calisthenics athlete. This section provides more detail on my background and interests.</p>
@@ -111,7 +148,7 @@
         </div>
         <div id="webdev">
              <h3>Web Development Skills 💻</h3>
-             <p>Proficient in HTML, CSS, JavaScript (as shown by the MPG calculator and slider).</p>
+             <p>Proficient in HTML, CSS, JavaScript (as shown by the MPG and Mortgage calculators and slider).</p>
         </div>
 
     </section>
@@ -145,7 +182,7 @@
     </footer>
 
     <script>
-        // --- START Calculator JavaScript (Existing & Unchanged) ---
+        // --- START MPG Calculator JavaScript (Existing & Unchanged) ---
         
         /**
          * Calculates the Miles Per Gallon (MPG) based on user input.
