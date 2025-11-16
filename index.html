@@ -40,10 +40,34 @@
     <div class="container" id="home">
         <img src="mylogo.jpg" alt="Marjam's Logo" class="logo">
         <p class="intro-text">Welcome to Marjam's Github page!</p>
-        <img src="marjamsphoto.jpg" class="main-image">
-    </div>
 
-    <!-- NEW MPG Calculator Section -->
+        <div class="slideshow-container">
+            
+            <div class="mySlides fade">
+                <img src="your_image_1.jpg" style="width:100%" alt="Personal Image 1: Placeholder for calisthenics or project image">
+                <div class="slide-text">Image 1: Your Caption Here</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="your_image_2.jpg" style="width:100%" alt="Personal Image 2: Placeholder for tech or career image">
+                <div class="slide-text">Image 2: Your Second Caption</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="your_image_3.jpg" style="width:100%" alt="Personal Image 3: Placeholder for networking or security image">
+                <div class="slide-text">Image 3: Another Great Shot</div>
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="your_image_4.jpg" style="width:100%" alt="Personal Image 4: Placeholder for web dev or general image">
+                <div class="slide-text">Image 4: The Final Slide</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        </div>
+
     <section id="mpg-calculator" class="container">
         <h2>Miles Per Gallon (MPG) Calculator ⛽</h2>
         <div class="calculator-card">
@@ -67,8 +91,6 @@
             <p class="error-message" id="errorMessage"></p>
         </div>
     </section>
-    <!-- END NEW MPG Calculator Section -->
-
     <section id="about" class="container">
         <h2>About Me</h2>
         <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security! I'm also a full time Help Desk Technician and Calisthenics athlete. This section provides more detail on my background and interests.</p>
@@ -151,6 +173,59 @@
             // Display the result, rounded to two decimal places
             mpgResultElement.textContent = milesPerGallon.toFixed(2) + ' MPG';
         }
+
+        // --- START Image Slider JavaScript ---
+        let slideIndex = 0; // Use 'let' as required. Start at 0, will be incremented before display.
+        const SLIDE_INTERVAL = 4000; // Auto-play interval in milliseconds (4 seconds)
+
+        // Function to control manual slide changes
+        function plusSlides(n) {
+            clearTimeout(autoSlideTimeout); // Stop auto-play when user interacts
+            showSlides(slideIndex += n);
+            // Restart auto-play after a manual change
+            autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL);
+        }
+
+        // Function to display the slides
+        function showSlides(n) {
+            let i; // Use 'let' as required
+            const slides = document.getElementsByClassName("mySlides");
+            
+            // Handle wrap-around logic for the index
+            if (n === undefined) {
+                n = ++slideIndex; // Pre-increment for auto-play
+            }
+            if (n > slides.length) {
+                slideIndex = 1;
+            }    
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) { // Use 'for' loop as required
+                slides[i].style.display = "none";  
+            }
+            
+            // Display the current slide
+            // Note: Since slideIndex is 1-based internally, use slideIndex - 1 for 0-based array access
+            if (slides.length > 0) {
+                slides[slideIndex - 1].style.display = "block";  
+            }
+        }
+        
+        // Function for auto-play
+        function autoPlaySlides() {
+            showSlides(); // This auto-increments the slideIndex internally
+            // Call autoPlaySlides again after the interval
+            autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL);
+        }
+
+        // Initial setup
+        showSlides(1); // Start by showing the first slide
+        let autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL); // Start the auto-play
+
+        // --- END Image Slider JavaScript ---
     </script>
 </body>
 </html>
