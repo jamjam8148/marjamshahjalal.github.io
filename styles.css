@@ -60,14 +60,15 @@ h1 {
 .mySlides {
     display: none;
     width: 100%;
-    /* Added transition for the fade effect */
 }
 
 .mySlides img {
-    width: 100%;
+    /* Corrected for responsiveness */
+    width: 100%; 
     height: auto;
     display: block; /* Removes any extra space below the image */
     border-radius: 5px; /* Match container border-radius */
+    max-width: 100%; 
 }
 
 /* Next & previous buttons */
@@ -113,13 +114,13 @@ h1 {
 
 /* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
 
