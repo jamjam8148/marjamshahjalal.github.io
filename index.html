@@ -59,7 +59,7 @@
             </div>
             
             <div class="mySlides fade">
-                <img src="muscleup.jpg" style="width:100%" alt="Personal Image 4: Web dev or general image">
+                <img src="your_image_4.jpg" style="width:100%" alt="Personal Image 4: Web dev or general image">
                 <div class="slide-text">Image 4: The Final Slide</div>
             </div>
 
@@ -145,48 +145,44 @@
     </footer>
 
     <script>
+        // --- START Calculator JavaScript ---
+        
         /**
-        * Calculates the Miles Per Gallon (MPG) based on user input.
-        * The pseudocode required milesPerGallon = milesTraveled / gallonsOfGasUsed
-        * The original pseudocode was debugged from addition to division.
-        */
+         * Calculates the Miles Per Gallon (MPG) based on user input.
+         */
         function calculateMPG() {
-            // Get input values from the text boxes
             const milesTraveledInput = document.getElementById('milesTraveled').value;
             const gallonsUsedInput = document.getElementById('gallonsUsed').value;
             
-            // Get result and error elements
             const mpgResultElement = document.getElementById('mpgResult');
             const errorMessageElement = document.getElementById('errorMessage');
 
-            // Clear previous results and errors
             mpgResultElement.textContent = '--';
             errorMessageElement.textContent = '';
             
-            // Parse inputs as floating point numbers
             const milesTraveled = parseFloat(milesTraveledInput);
             const gallonsUsed = parseFloat(gallonsUsedInput);
 
-            // Input validation and error handling
             if (isNaN(milesTraveled) || isNaN(gallonsUsed) || milesTraveled <= 0 || gallonsUsed <= 0) {
                 errorMessageElement.textContent = 'Please enter valid, positive numbers for both Miles Traveled and Gallons Used.';
                 return;
             }
 
-            // Calculation: milesPerGallon = milesTraveled / gallonsOfGasUsed
             const milesPerGallon = milesTraveled / gallonsUsed;
 
-            // Display the result, rounded to two decimal places
             mpgResultElement.textContent = milesPerGallon.toFixed(2) + ' MPG';
         }
 
-        // --- START Image Slider JavaScript ---
-        let slideIndex = 0; // Use 'let' as required. Start at 0, will be incremented before display.
+        // --- START Image Slider JavaScript (FIXED SCOPE) ---
+
+        // 1. Declare all shared variables at the top for correct scope access
+        let slideIndex = 0; 
+        let autoSlideTimeout; 
         const SLIDE_INTERVAL = 4000; // Auto-play interval in milliseconds (4 seconds)
 
         // Function to control manual slide changes
         function plusSlides(n) {
-            clearTimeout(autoSlideTimeout); // Stop auto-play when user interacts
+            clearTimeout(autoSlideTimeout); // Now safely accessing the declared variable
             showSlides(slideIndex += n);
             // Restart auto-play after a manual change
             autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL);
@@ -194,12 +190,18 @@
 
         // Function to display the slides
         function showSlides(n) {
-            let i; // Use 'let' as required
+            let i; 
             const slides = document.getElementsByClassName("mySlides");
             
+            // Safety check for empty slides collection
+            if (slides.length === 0) {
+                console.error("No slides found. Check class name 'mySlides' in HTML.");
+                return; 
+            }
+
             // Handle wrap-around logic for the index
             if (n === undefined) {
-                n = ++slideIndex; // Pre-increment for auto-play
+                n = ++slideIndex; 
             }
             if (n > slides.length) {
                 slideIndex = 1;
@@ -209,30 +211,27 @@
             }
             
             // Hide all slides
-            for (i = 0; i < slides.length; i++) { // Use 'for' loop as required
+            for (i = 0; i < slides.length; i++) { 
                 slides[i].style.display = "none";  
             }
             
             // Display the current slide
             // Note: Since slideIndex is 1-based internally, use slideIndex - 1 for 0-based array access
-            if (slides.length > 0) {
-                slides[slideIndex - 1].style.display = "block";  
-            }
+            slides[slideIndex - 1].style.display = "block";  
         }
         
         // Function for auto-play
         function autoPlaySlides() {
-            showSlides(); // This auto-increments the slideIndex internally
+            showSlides(); 
             // Call autoPlaySlides again after the interval
             autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL);
         }
 
-        // Initial setup
+        // 2. Initial setup (Run once when the page loads)
         showSlides(1); // Start by showing the first slide
-        let autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL); // Start the auto-play
+        autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL); // Start the auto-play
 
         // --- END Image Slider JavaScript ---
     </script>
 </body>
 </html>
-
