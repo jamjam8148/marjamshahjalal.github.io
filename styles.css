@@ -1,13 +1,6 @@
-/* ... (Existing styles remain unchanged above this point) ... */
+/* ... (Existing styles above this point) ... */
 
-.error-message {
-    color: #dc3545;
-    font-weight: bold;
-    margin-top: 15px;
-    min-height: 20px;
-}
-
-/* === NEW Item Price Calculator Styles === */
+/* === NEW Item Price Calculator Styles (Applied to Coaching Form) === */
 
 /* Use existing calculator-card for the overall container style */
 .item-price-card {
@@ -23,21 +16,18 @@
     border-bottom: 1px solid #eee;
 }
 
-/* Column classes (Flex Items) based on 12-column system (6+3+2 = 11 for spacing) */
-/* col-6: Item Name (50% - for the label/text) */
+/* Column classes (Flex Items) based on 12-column system */
 .col-6 {
-    flex: 0 0 50%; /* No grow, no shrink, 50% basis */
+    flex: 0 0 50%; 
     padding-right: 10px;
     text-align: left;
 }
-/* col-3: Quantity (25% - for the quantity input) */
 .col-3 {
-    flex: 0 0 25%; /* No grow, no shrink, 25% basis */
+    flex: 0 0 25%; 
     padding: 0 5px;
 }
-/* col-2: Price (16.67% - for the readonly price output) */
 .col-2 {
-    flex: 0 0 16.67%; /* No grow, no shrink, ~16.67% basis */
+    flex: 0 0 16.67%; 
     text-align: right;
 }
 
@@ -49,17 +39,17 @@
     border-radius: 4px;
     box-sizing: border-box; 
     font-size: 0.9em;
-    text-align: center; /* Center the quantity/price numbers */
+    text-align: center; 
 }
 
 /* Readonly price fields (to visually distinguish them) */
-#item-price-calculator input[readonly] {
+#coaching-price-calculator input[readonly] {
     background-color: #f0f0f0;
     color: #007bff;
     font-weight: bold;
     border-color: #ccc;
     cursor: default;
-    text-align: right; /* Align price to the right */
+    text-align: right; 
 }
 
 /* Header Row Styling */
@@ -81,28 +71,28 @@
 
 /* Total Value Display */
 .total-row .result {
-    font-size: 1.5em; /* Smaller than main result but still prominent */
-    color: #28a745; /* Use success color for the total */
-    display: block; /* Make it take up the full column space */
+    font-size: 1.5em; 
+    color: #28a745; 
+    display: block; 
 }
 
 /* Mobile adjustments for the new calculator */
 @media (max-width: 600px) {
     .row {
-        flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+        flex-wrap: wrap; 
         padding: 8px 0;
     }
     .col-6 {
-        flex: 0 0 100%; /* Item name takes full width */
+        flex: 0 0 100%; 
         margin-bottom: 5px;
     }
     .col-3 {
-        flex: 0 0 50%; /* Quantity takes 50% */
+        flex: 0 0 50%; 
         padding-left: 0;
         text-align: left;
     }
     .col-2 {
-        flex: 0 0 40%; /* Price takes 40% (leaving some space) */
+        flex: 0 0 40%; 
         padding-right: 0;
         text-align: right;
     }
@@ -113,6 +103,6 @@
         flex: 0 0 30%;
     }
     .total-row .col-3 {
-        display: none; /* Hide the blank column */
+        display: none; 
     }
 }
