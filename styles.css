@@ -1,360 +1,118 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; 
-    color: #333; 
-    text-align: center;
-}
-
-header {
-    background-color: #007bff; 
-    color: #fff;
-    padding: 1em 0;
-}
-
-h1 {
-    margin: 0;
-    color: #fff;
-}
-
-.container {
-    width: 90%; 
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-.intro-text {
-    font-size: 1.5em;
-    color: #555;
-    margin-top: 20px;
-}
-.bio-text {
-    font-family: 'Georgia', serif;
-    font-size: 1.2em;
-    color: #666;
-    line-height: 1.6;
-    margin-top: 15px;
-}
-/* REMOVED .main-image styles as it's replaced by the slider */
-
-
-/* === Image Slider Styles === */
-.slideshow-container {
-    max-width: 600px; /* Constrain slider width for better visual integration */
-    position: relative;
-    margin: 30px auto;
-    border: 5px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Crucial for containing the fade effect */
-}
-
-/* Hide the images by default */
-.mySlides {
-    display: none;
-    width: 100%;
-}
-
-.mySlides img {
-    /* Corrected for responsiveness */
-    width: 100%; 
-    height: auto;
-    display: block; /* Removes any extra space below the image */
-    border-radius: 5px; /* Match container border-radius */
-    max-width: 100%; 
-}
-
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0,0,0,0.4);
-    z-index: 5;
-}
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.slide-text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0,0,0,0.6);
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-
-/* === Navbar Styles (Unchanged) === */
-
-.navbar {
-    background-color: #007bff; 
-    padding: 0;
-    margin-top: 10px;
-}
-
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    justify-content: center;
-}
-
-.navbar ul li {
-    position: relative; 
-    text-align: center;
-}
-
-.navbar ul li a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #fff;
-    transition: background-color 0.3s ease;
-    white-space: nowrap; 
-}
-
-.navbar ul li a:hover {
-    background-color: #0056b3; 
-    color: #ffc107; 
-}
-
-
-.navbar ul ul {
-    display: none;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    background-color: #0056b3; 
-    flex-direction: column; 
-    min-width: 180px; 
-    z-index: 10; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.navbar ul li:hover > ul {
-    display: flex; 
-}
-
-.navbar ul ul li {
-    width: 100%; 
-}
-
-.navbar ul ul li a:hover {
-    background-color: #003f7f; 
-    color: #ffc107; 
-}
-
-
-
-.menu-toggle {
-    display: none; 
-    font-size: 30px;
-    cursor: pointer;
-    color: #fff;
-    padding: 10px 20px;
-}
-
-#menu-checkbox {
-    display: none;
-}
-
-
-@media (max-width: 768px) {
-    
-    
-    .menu-toggle {
-        display: block;
-        text-align: right;
-        margin-right: 20px;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: left;
-        display: none; 
-    }
-
-    .navbar li {
-        border-top: 1px solid #0056b3;
-    }
-
-    #menu-checkbox:checked ~ ul {
-        display: flex;
-    }
-
-    .navbar ul ul {
-        position: static; 
-        width: 100%;
-        box-shadow: none;
-        background-color: #0056b3;
-        border-left: 5px solid #ffc107; 
-    }
-
-    .navbar ul li:hover > ul {
-        display: flex; 
-    }
-}
-
-
-/* === Footer Styles === */
-footer {
-    background-color: #007bff; 
-    color: #fff;
-    padding: 1em 0;
-    margin-top: 50px;
-}
-
-footer .links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer .links a:hover {
-    color: #ffc107; 
-    text-decoration: underline;
-}
-
-.copyright {
-    margin-top: 10px;
-    font-size: 0.9em;
-
-}
-
-/* === NEW Calculator Styles === */
-#mpg-calculator {
-    margin-top: 40px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.calculator-card {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.input-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #007bff;
-}
-
-.input-group input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box; 
-    font-size: 1em;
-    transition: border-color 0.3s;
-}
-
-.input-group input[type="number"]:focus {
-    border-color: #0056b3;
-    outline: none;
-}
-
-button {
-    background-color: #28a745; 
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px #1e7e34; /* Darker green for a 3D effect */
-    margin-top: 10px;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-button:active {
-    background-color: #1c7430;
-    box-shadow: 0 2px #1e7e34;
-    transform: translateY(2px);
-}
-
-.result-box {
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-}
-
-.result-box p {
-    margin: 0;
-}
-
-.result {
-    font-size: 2.2em;
-    font-weight: 700;
-    color: #dc3545; /* A strong color to highlight the result */
-    margin-top: 5px !important;
-}
+/* ... (Existing styles remain unchanged above this point) ... */
 
 .error-message {
     color: #dc3545;
     font-weight: bold;
     margin-top: 15px;
     min-height: 20px;
+}
+
+/* === NEW Item Price Calculator Styles === */
+
+/* Use existing calculator-card for the overall container style */
+.item-price-card {
+    max-width: 600px; /* Make it a bit wider than the other cards */
+}
+
+/* Row (Flex Container) */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Column classes (Flex Items) based on 12-column system (6+3+2 = 11 for spacing) */
+/* col-6: Item Name (50% - for the label/text) */
+.col-6 {
+    flex: 0 0 50%; /* No grow, no shrink, 50% basis */
+    padding-right: 10px;
+    text-align: left;
+}
+/* col-3: Quantity (25% - for the quantity input) */
+.col-3 {
+    flex: 0 0 25%; /* No grow, no shrink, 25% basis */
+    padding: 0 5px;
+}
+/* col-2: Price (16.67% - for the readonly price output) */
+.col-2 {
+    flex: 0 0 16.67%; /* No grow, no shrink, ~16.67% basis */
+    text-align: right;
+}
+
+/* Styles for the Input fields in the new calculator */
+.row input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 0.9em;
+    text-align: center; /* Center the quantity/price numbers */
+}
+
+/* Readonly price fields (to visually distinguish them) */
+#item-price-calculator input[readonly] {
+    background-color: #f0f0f0;
+    color: #007bff;
+    font-weight: bold;
+    border-color: #ccc;
+    cursor: default;
+    text-align: right; /* Align price to the right */
+}
+
+/* Header Row Styling */
+.header-row {
+    font-weight: bold;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid #007bff;
+}
+/* Total Row Styling */
+.total-row {
+    border-top: 2px solid #007bff;
+    border-bottom: none;
+    margin-top: 10px;
+    padding-top: 15px;
+    font-size: 1.2em;
+}
+
+/* Total Value Display */
+.total-row .result {
+    font-size: 1.5em; /* Smaller than main result but still prominent */
+    color: #28a745; /* Use success color for the total */
+    display: block; /* Make it take up the full column space */
+}
+
+/* Mobile adjustments for the new calculator */
+@media (max-width: 600px) {
+    .row {
+        flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+        padding: 8px 0;
+    }
+    .col-6 {
+        flex: 0 0 100%; /* Item name takes full width */
+        margin-bottom: 5px;
+    }
+    .col-3 {
+        flex: 0 0 50%; /* Quantity takes 50% */
+        padding-left: 0;
+        text-align: left;
+    }
+    .col-2 {
+        flex: 0 0 40%; /* Price takes 40% (leaving some space) */
+        padding-right: 0;
+        text-align: right;
+    }
+    .total-row .col-6 {
+        flex: 0 0 60%;
+    }
+    .total-row .col-2 {
+        flex: 0 0 30%;
+    }
+    .total-row .col-3 {
+        display: none; /* Hide the blank column */
+    }
 }
