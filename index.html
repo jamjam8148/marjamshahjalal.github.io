@@ -1,194 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marjam Shahjalal</title>
+    <title>Coaching Plan Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="mortgage_calculator.js"></script>
+
+    <!-- jQuery (REQUIRED for assignment) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
 
-<header>
-    <h1>Marjam Shahjalal</h1>
-    <nav class="navbar">
-        <input type="checkbox" id="menu-checkbox">
-        <label for="menu-checkbox" class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#mpg-calculator">MPG Calculator</a></li>
-            <li><a href="#mortgage-calculator">Mortgage Calculator</a></li>
-            <li><a href="#coaching-calculator">Coaching Quote</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li>
-                <a href="#projects">Projects & Skills</a>
-                <ul>
-                    <li><a href="#networking">Networking</a></li>
-                    <li><a href="#security">Security</a></li>
-                    <li><a href="#webdev">Web Dev</a></li>
-                </ul>
-            </li>
-            <li><a href="#career">Career</a></li>
-            <li><a href="#calisthenics">Calisthenics</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<div class="container">
 
-<div class="container" id="home">
-    <img src="mylogo.jpg" alt="Marjam's Logo" class="logo">
-    <p class="intro-text">Welcome to Marjam's Github page!</p>
+    <h2>Coaching Plans Cost Calculator</h2>
 
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="marjamsphoto.jpg" alt="Personal Image 1: Marjam's Portrait">
-            <div class="slide-text">Image 1: Marjam's Portrait</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="photo2.jpg" alt="Personal Image 2: Tech or Career Image">
-            <div class="slide-text">Image 2: Tech or Career Image</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="playground.jpg" alt="Personal Image 3: Calisthenics or Project Image">
-            <div class="slide-text">Image 3: Calisthenics Training Area</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="muscleup.jpg" alt="Personal Image 4: Muscle-Up">
-            <div class="slide-text">Image 4: Mastering the Muscle-Up</div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="row header-row">
+        <div class="col-6"><strong>Coaching Plan</strong></div>
+        <div class="col-3"><strong>Quantity</strong></div>
+        <div class="col-2"><strong>Price</strong></div>
     </div>
+
+    <!-- Basic Coaching -->
+    <div class="row">
+        <div class="col-6">
+            1. Basic Coaching (4 weeks)
+        </div>
+        <div class="col-3">
+            <input type="number" value="0" class="qty" id="qty_basic">
+        </div>
+        <div class="col-2">
+            <input type="number" readonly value="0" id="price_basic">
+        </div>
+    </div>
+
+    <!-- Standard Coaching -->
+    <div class="row">
+        <div class="col-6">
+            2. Standard Coaching (8 weeks)
+        </div>
+        <div class="col-3">
+            <input type="number" value="0" class="qty" id="qty_standard">
+        </div>
+        <div class="col-2">
+            <input type="number" readonly value="0" id="price_standard">
+        </div>
+    </div>
+
+    <!-- Premium Coaching -->
+    <div class="row">
+        <div class="col-6">
+            3. Premium Coaching (12 weeks)
+        </div>
+        <div class="col-3">
+            <input type="number" value="0" class="qty" id="qty_premium">
+        </div>
+        <div class="col-2">
+            <input type="number" readonly value="0" id="price_premium">
+        </div>
+    </div>
+
+    <!-- Elite VIP Coaching -->
+    <div class="row">
+        <div class="col-6">
+            4. Elite VIP Coaching (16 weeks)
+        </div>
+        <div class="col-3">
+            <input type="number" value="0" class="qty" id="qty_elite">
+        </div>
+        <div class="col-2">
+            <input type="number" readonly value="0" id="price_elite">
+        </div>
+    </div>
+
+    <h1 class="total-label">Total <span id="total_value">0</span></h1>
+
 </div>
 
-<section id="coaching-calculator" class="container">
-    <h2>Coaching Services Quote Calculator</h2>
-    <div class="calculator-card">
-        <div class="input-group">
-            <label for="weeks">Coaching Duration (weeks)</label>
-            <input type="number" id="weeks" min="1" placeholder="e.g., 4">
-        </div>
-        <div class="input-group">
-            <label for="calls">Weekly Call Sessions</label>
-            <input type="number" id="calls" min="0" placeholder="e.g., 1">
-        </div>
-        <div class="input-group">
-            <label for="form-checks">Form Check Add-ons</label>
-            <input type="number" id="form-checks" min="0" placeholder="e.g., 2">
-        </div>
-        <button onclick="calculateCoaching()">Get Quote</button>
-        <div class="result-box" id="coaching-result-box" style="display:none;">
-            <p>Estimated Coaching Price:</p>
-            <p class="result" id="coaching-result"></p>
-        </div>
-        <p class="error-message" id="coaching-error"></p>
-    </div>
-</section>
-
-<section id="mpg-calculator" class="container">
-    <h2>Miles Per Gallon (MPG) Calculator ⛽</h2>
-    <div class="calculator-card">
-        <div class="input-group">
-            <label for="milesTraveled">Miles Traveled:</label>
-            <input type="number" id="milesTraveled" placeholder="e.g., 350" min="0" required>
-        </div>
-        <div class="input-group">
-            <label for="gallonsUsed">Gallons of Gas Used:</label>
-            <input type="number" id="gallonsUsed" placeholder="e.g., 12.5" min="0" required>
-        </div>
-        <button onclick="calculateMPG()">Calculate MPG</button>
-        <div class="result-box">
-            <p>Your Estimated MPG:</p>
-            <p class="result" id="mpgResult">--</p>
-        </div>
-        <p class="error-message" id="errorMessage"></p>
-    </div>
-</section>
-
-<section id="mortgage-calculator" class="container">
-    <h2>Home Mortgage Calculator 🏠</h2>
-    <div class="calculator-card">
-        <form name="Form1">
-            <div class="input-group">
-                <label for="Amount">Mortgage Amount:</label>
-                <input type="text" name="Amount" id="Amount" placeholder="e.g., 200000">
-            </div>
-            <div class="input-group">
-                <label for="Rate">Annual Interest Rate (%):</label>
-                <input type="text" name="Rate" id="Rate" placeholder="e.g., 6.5">
-            </div>
-            <div class="input-group">
-                <label for="Years">Years for Loan:</label>
-                <input type="text" name="Years" id="Years" placeholder="e.g., 30">
-            </div>
-            <button type="button" onclick="mortCalc(this.form)">Calculate Monthly Payment</button>
-            <div class="result-box">
-                <p>Estimated Monthly Payment:</p>
-                <input type="text" name="Payment" id="Payment" value="--" readonly class="result">
-            </div>
-        </form>
-    </div>
-</section>
-
-<section id="about" class="container">
-    <h2>About Me</h2>
-    <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security...</p>
-</section>
-
-<section id="projects" class="container">
-    <h2>Projects & Skills</h2>
-    <div id="networking"><h3>Networking Projects 🌐</h3><p>Configured a secure AD network...</p></div>
-    <div id="security"><h3>Cybersecurity Focus 🔒</h3><p>Built a lab with Ubuntu, Splunk, Kali...</p></div>
-    <div id="webdev"><h3>Web Development Skills 💻</h3><p>Proficient in HTML, CSS, JS...</p></div>
-</section>
-
-<section id="career" class="container">
-    <h2>Career Experience</h2>
-    <p>Help Desk Technician providing Tier 1/2 support...</p>
-</section>
-
-<section id="calisthenics" class="container">
-    <h2>Calisthenics Journey 💪</h2>
-    <p>Dedicated calisthenics athlete...</p>
-</section>
-
-<section id="contact" class="container">
-    <h2>Contact Me</h2>
-    <p>Connect via LinkedIn or GitHub below.</p>
-</section>
-
-<footer>
-    <div class="links">
-        <a href="https://github.com/jamjam8148/BIS23_Marjam_Shahjalal">Github</a>
-        <a href="https://www.linkedin.com/in/marjam-shahjalal-39b9b1245/">LinkedIn</a>
-    </div>
-    <p>&copy; 2012 All Rights Reserved</p>
-</footer>
-
 <script>
-function calculateCoaching() {
-    let weeks = parseInt(document.getElementById('weeks').value);
-    let calls = parseInt(document.getElementById('calls').value);
-    let checks = parseInt(document.getElementById('form-checks').value);
-    let error = document.getElementById('coaching-error');
-    let resultBox = document.getElementById('coaching-result-box');
-    let result = document.getElementById('coaching-result');
+function calculateTotal() {
 
-    error.textContent = "";
-    resultBox.style.display = "none";
+    let unit_price = {
+        basic: 99,
+        standard: 179,
+        premium: 259,
+        elite: 399
+    };
 
-    if (isNaN(weeks) || weeks <= 0) {
-        error.textContent = "Please enter a valid number of weeks.";
-        return;
-    }
+    let item_price = {};
 
-    let price = weeks * 25 + calls * 15 + checks * 5;
-    result.textContent = "$" + price.toFixed(2);
-    resultBox.style.display = "block";
+    // BASIC
+    item_price.basic = ($("#qty_basic").val() * unit_price.basic);
+    $("#price_basic").val(item_price.basic);
+
+    // STANDARD
+    item_price.standard = ($("#qty_standard").val() * unit_price.standard);
+    $("#price_standard").val(item_price.standard);
+
+    // PREMIUM
+    item_price.premium = ($("#qty_premium").val() * unit_price.premium);
+    $("#price_premium").val(item_price.premium);
+
+    // ELITE
+    item_price.elite = ($("#qty_elite").val() * unit_price.elite);
+    $("#price_elite").val(item_price.elite);
+
+    // TOTAL
+    let total = item_price.basic + item_price.standard + item_price.premium + item_price.elite;
+    $("#total_value").text(total);
 }
+
+// run calculator when quantity changes
+$(function () {
+    $(".qty").on("change keyup", calculateTotal);
+});
 </script>
 
 </body>
