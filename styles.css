@@ -104,3 +104,109 @@
         display: none; 
     }
 }
+/* === NEW Coaching Calculator Styles for Row/Column Layout === */
+
+/* Used to make the calculator card slightly wider than the others */
+.item-price-card {
+    max-width: 600px; 
+}
+
+/* Row (Flex Container) */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Column classes (Flex Items) */
+.col-6 {
+    flex: 0 0 50%; /* Package Name */
+    padding-right: 10px;
+    text-align: left;
+}
+.col-3 {
+    flex: 0 0 25%; /* Duration/Weeks */
+    padding: 0 5px;
+}
+.col-2 {
+    flex: 0 0 16.67%; /* Price */
+    text-align: right;
+}
+
+/* Styles for the Input fields in the new calculator */
+.row input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 0.9em;
+    text-align: center; 
+}
+
+/* Readonly price fields */
+#coaching-price-calculator input[readonly] {
+    background-color: #f0f0f0;
+    color: #007bff;
+    font-weight: bold;
+    border-color: #ccc;
+    cursor: default;
+    text-align: right; 
+}
+
+/* Header Row Styling */
+.header-row {
+    font-weight: bold;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid #007bff;
+}
+/* Total Row Styling */
+.total-row {
+    border-top: 2px solid #007bff;
+    border-bottom: none;
+    margin-top: 10px;
+    padding-top: 15px;
+    font-size: 1.2em;
+}
+
+/* Total Value Display */
+.total-row .result {
+    font-size: 1.5em; 
+    color: #28a745; 
+    display: block; 
+}
+
+/* Mobile adjustments (responsive design) */
+@media (max-width: 600px) {
+    .row {
+        flex-wrap: wrap; 
+        padding: 8px 0;
+    }
+    .col-6 {
+        flex: 0 0 100%; 
+        margin-bottom: 5px;
+    }
+    .col-3 {
+        flex: 0 0 50%; 
+        padding-left: 0;
+        text-align: left;
+    }
+    .col-2 {
+        flex: 0 0 40%; 
+        padding-right: 0;
+        text-align: right;
+    }
+    .total-row .col-6 {
+        flex: 0 0 60%;
+    }
+    .total-row .col-2 {
+        flex: 0 0 30%;
+    }
+    .total-row .col-3 {
+        display: none; 
+    }
+}
