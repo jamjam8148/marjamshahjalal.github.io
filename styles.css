@@ -1,6 +1,6 @@
-/* ... (Existing styles above this point) ... */
+/* ... (Ensure all existing styles are above this point) ... */
 
-/* === NEW Item Price Calculator Styles (Applied to Coaching Form) === */
+/* === NEW Calculator Styles for Row/Column Layout === */
 
 /* Use existing calculator-card for the overall container style */
 .item-price-card {
@@ -18,16 +18,16 @@
 
 /* Column classes (Flex Items) based on 12-column system */
 .col-6 {
-    flex: 0 0 50%; 
+    flex: 0 0 50%; /* Item Name */
     padding-right: 10px;
     text-align: left;
 }
 .col-3 {
-    flex: 0 0 25%; 
+    flex: 0 0 25%; /* Quantity/Weeks */
     padding: 0 5px;
 }
 .col-2 {
-    flex: 0 0 16.67%; 
+    flex: 0 0 16.67%; /* Price */
     text-align: right;
 }
 
@@ -76,7 +76,7 @@
     display: block; 
 }
 
-/* Mobile adjustments for the new calculator */
+/* Mobile adjustments (Optional, but recommended) */
 @media (max-width: 600px) {
     .row {
         flex-wrap: wrap; 
