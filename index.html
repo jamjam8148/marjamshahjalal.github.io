@@ -44,12 +44,59 @@
     </header>
 
     <div class="container" id="home">
-        </div> 
+        <img src="mylogo.jpg" alt="Marjam's Logo" class="logo">
+        <p class="intro-text">Welcome to Marjam's Github page!</p>
+
+        <div class="slideshow-container">
+            
+            <div class="mySlides fade">
+                <img src="marjamsphoto.jpg" alt="Personal Image 1: Marjam's Portrait">
+                <div class="slide-text">Image 1: Marjam's Portrait</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="photo2.jpg" alt="Personal Image 2: Tech or Career Image">
+                <div class="slide-text">Image 2: Tech or Career Image</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="playground.jpg" alt="Personal Image 3: Calisthenics or Project Image">
+                <div class="slide-text">Image 3: Calisthenics Training Area</div>
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="muscleup.jpg" alt="Personal Image 4: Web dev or general image">
+                <div class="slide-text">Image 4: Mastering the Muscle-Up</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div> 
 
     <section id="mpg-calculator" class="container">
-        </section>
+        <h2>Miles Per Gallon (MPG) Calculator ⛽</h2>
+        <div class="calculator-card">
+            <div class="input-group">
+                <label for="milesTraveled">Miles Traveled:</label>
+                <input type="number" id="milesTraveled" placeholder="e.g., 350" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="gallonsUsed">Gallons of Gas Used:</label>
+                <input type="number" id="gallonsUsed" placeholder="e.g., 12.5" min="0" required>
+            </div>
+            
+            <button onclick="calculateMPG()">Calculate MPG</button>
+            
+            <div class="result-box">
+                <p>Your Estimated MPG:</p>
+                <p class="result" id="mpgResult">--</p>
+            </div>
 
-    ---
+            <p class="error-message" id="errorMessage"></p>
+        </div>
+    </section>
 
     <section id="coaching-price-calculator" class="container">
         <h2>Calisthenics Coaching Package Price Form 🏋️</h2>
@@ -106,105 +153,4 @@
                     4. **Platinum Package** (Unlimited Support, Meal Guide)
                 </div>
                 <div class="col-3">
-                    <input type="number" value="0" min="0" class="qty" id="qty_platinum" />
-                </div>
-                <div class="col-2">
-                    <input type="number" readonly value="0" id="price_platinum" />
-                </div>
-            </div>
-
-            <div class="row total-row">
-                <div class="col-6">
-                    <strong>Total Coaching Price:</strong>
-                </div>
-                <div class="col-3">
-                    </div>
-                <div class="col-2">
-                    <span id="total_value" class="result">0</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    ---
-
-    <section id="mortgage-calculator" class="container">
-        </section>
-
-    <section id="about" class="container">
-        </section>
-
-    <script>
-        // ... (Existing MPG Calculator and Slider JS) ...
-        
-        // --- START MODIFIED Item Price Calculator JavaScript (Requires jQuery) ---
-        
-        /**
-         * Calculates the individual coaching package prices and the grand total price.
-         */
-        function calculateTotal()
-        {
-          // Unit prices per week for each coaching package
-          // Prices are illustrative: Bronze: $25/wk, Silver: $50/wk, Gold: $75/wk, Platinum: $100/wk
-          const unit_price = {
-            bronze: 25,
-            silver: 50,
-            gold: 75,
-            platinum: 100    
-          };
-
-          // Object to hold the calculated price for each item
-          let item_price = {};
-          
-          // Helper function to get the quantity, convert it to a number (or 0 if invalid), 
-          // and calculate the item price.
-          const calculateItemPrice = (item) => {
-            // Use parseFloat to allow for decimal quantities (though weeks are usually whole numbers)
-            const qty = parseFloat($("#qty_" + item).val()) || 0; 
-            
-            // Calculate the item price (Duration in Weeks * Weekly Unit Price)
-            const calculatedPrice = qty * unit_price[item];
-
-            // Store the calculated price, rounded to 2 decimal places for currency
-            item_price[item] = parseFloat(calculatedPrice.toFixed(2));
-
-            // Set the result value in the price input field
-            $("#price_" + item).val(item_price[item].toFixed(2));
-          };
-          
-          // Calculate price for each package
-          calculateItemPrice("bronze");
-          calculateItemPrice("silver");
-          calculateItemPrice("gold");
-          calculateItemPrice("platinum");
-          
-          // Calculate the total by summing up all item prices
-          let total = item_price.bronze + item_price.silver + item_price.gold + item_price.platinum;
-
-          // Round the total to 2 decimal places for display
-          total = total.toFixed(2);
-          
-          // Set the value of the "total" span
-          $("#total_value").text(total);
-        }
-
-        // Event Handling: This runs the calculation whenever a quantity input field 
-        // with the class "qty" changes (change event) or a key is released (keyup event).
-        // The $(function() { ... }) is jQuery's document ready shortcut.
-        $(function()
-        {
-           $(".qty").on("change keyup", calculateTotal);
-        });
-
-        // Initialize the calculation on page load to set the initial prices (all 0)
-        $(document).ready(function() {
-            calculateTotal();
-        });
-        
-        // --- END MODIFIED Item Price Calculator JavaScript ---
-
-
-        // ... (Rest of JavaScript functions) ...
-    </script>
-</body>
-</html>
+                    <input type="number" value="0" min="0
