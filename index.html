@@ -4,287 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marjam Shahjalal</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <script src="mortgage_calculator.js"></script>
 </head>
 <body>
 
-    <header>
-        <h1>Marjam Shahjalal</h1>
-        
-        <nav class="navbar">
-            <input type="checkbox" id="menu-checkbox">
-            <label for="menu-checkbox" class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </label>
-            
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#mpg-calculator">MPG Calculator</a></li>
-                <li><a href="#mortgage-calculator">Mortgage Calculator</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li>
-                    <a href="#projects">Projects & Skills</a>
-                    <ul>
-                        <li><a href="#networking">Networking</a></li>
-                        <li><a href="#security">Security</a></li>
-                        <li><a href="#webdev">Web Dev</a></li>
-                    </ul>
-                </li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#calisthenics">Calisthenics</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Marjam Shahjalal</h1>
+    <nav class="navbar">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#mpg-calculator">MPG Calculator</a></li>
+            <li><a href="#mortgage-calculator">Mortgage Calculator</a></li>
+            <li><a href="#coaching-calculator">Coaching Quote</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li>
+                <a href="#projects">Projects & Skills</a>
+                <ul>
+                    <li><a href="#networking">Networking</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#webdev">Web Dev</a></li>
+                </ul>
+            </li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#calisthenics">Calisthenics</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="container" id="home">
-        <img src="mylogo.jpg" alt="Marjam's Logo" class="logo">
-        <p class="intro-text">Welcome to Marjam's Github page!</p>
+<div class="container" id="home">
+    <img src="mylogo.jpg" alt="Marjam's Logo" class="logo">
+    <p class="intro-text">Welcome to Marjam's Github page!</p>
 
-        <div class="slideshow-container">
-            
-            <div class="mySlides fade">
-                <img src="marjamsphoto.jpg" alt="Personal Image 1: Marjam's Portrait">
-                <div class="slide-text">Image 1: Marjam's Portrait</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="photo2.jpg" alt="Personal Image 2: Tech or Career Image">
-                <div class="slide-text">Image 2: Tech or Career Image</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="playground.jpg" alt="Personal Image 3: Calisthenics or Project Image">
-                <div class="slide-text">Image 3: Calisthenics Training Area</div>
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="muscleup.jpg" alt="Personal Image 4: Web dev or general image">
-                <div class="slide-text">Image 4: Mastering the Muscle-Up</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="marjamsphoto.jpg" alt="Personal Image 1: Marjam's Portrait">
+            <div class="slide-text">Image 1: Marjam's Portrait</div>
         </div>
-        </div> 
+        <div class="mySlides fade">
+            <img src="photo2.jpg" alt="Personal Image 2: Tech or Career Image">
+            <div class="slide-text">Image 2: Tech or Career Image</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="playground.jpg" alt="Personal Image 3: Calisthenics or Project Image">
+            <div class="slide-text">Image 3: Calisthenics Training Area</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="muscleup.jpg" alt="Personal Image 4: Muscle-Up">
+            <div class="slide-text">Image 4: Mastering the Muscle-Up</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
 
-    <section id="mpg-calculator" class="container">
-        <h2>Miles Per Gallon (MPG) Calculator ⛽</h2>
-        <div class="calculator-card">
+<section id="coaching-calculator" class="container">
+    <h2>Coaching Services Quote Calculator</h2>
+    <div class="calculator-card">
+        <div class="input-group">
+            <label for="weeks">Coaching Duration (weeks)</label>
+            <input type="number" id="weeks" min="1" placeholder="e.g., 4">
+        </div>
+        <div class="input-group">
+            <label for="calls">Weekly Call Sessions</label>
+            <input type="number" id="calls" min="0" placeholder="e.g., 1">
+        </div>
+        <div class="input-group">
+            <label for="form-checks">Form Check Add-ons</label>
+            <input type="number" id="form-checks" min="0" placeholder="e.g., 2">
+        </div>
+        <button onclick="calculateCoaching()">Get Quote</button>
+        <div class="result-box" id="coaching-result-box" style="display:none;">
+            <p>Estimated Coaching Price:</p>
+            <p class="result" id="coaching-result"></p>
+        </div>
+        <p class="error-message" id="coaching-error"></p>
+    </div>
+</section>
+
+<section id="mpg-calculator" class="container">
+    <h2>Miles Per Gallon (MPG) Calculator ⛽</h2>
+    <div class="calculator-card">
+        <div class="input-group">
+            <label for="milesTraveled">Miles Traveled:</label>
+            <input type="number" id="milesTraveled" placeholder="e.g., 350" min="0" required>
+        </div>
+        <div class="input-group">
+            <label for="gallonsUsed">Gallons of Gas Used:</label>
+            <input type="number" id="gallonsUsed" placeholder="e.g., 12.5" min="0" required>
+        </div>
+        <button onclick="calculateMPG()">Calculate MPG</button>
+        <div class="result-box">
+            <p>Your Estimated MPG:</p>
+            <p class="result" id="mpgResult">--</p>
+        </div>
+        <p class="error-message" id="errorMessage"></p>
+    </div>
+</section>
+
+<section id="mortgage-calculator" class="container">
+    <h2>Home Mortgage Calculator 🏠</h2>
+    <div class="calculator-card">
+        <form name="Form1">
             <div class="input-group">
-                <label for="milesTraveled">Miles Traveled:</label>
-                <input type="number" id="milesTraveled" placeholder="e.g., 350" min="0" required>
+                <label for="Amount">Mortgage Amount:</label>
+                <input type="text" name="Amount" id="Amount" placeholder="e.g., 200000">
             </div>
-            
             <div class="input-group">
-                <label for="gallonsUsed">Gallons of Gas Used:</label>
-                <input type="number" id="gallonsUsed" placeholder="e.g., 12.5" min="0" required>
+                <label for="Rate">Annual Interest Rate (%):</label>
+                <input type="text" name="Rate" id="Rate" placeholder="e.g., 6.5">
             </div>
-            
-            <button onclick="calculateMPG()">Calculate MPG</button>
-            
+            <div class="input-group">
+                <label for="Years">Years for Loan:</label>
+                <input type="text" name="Years" id="Years" placeholder="e.g., 30">
+            </div>
+            <button type="button" onclick="mortCalc(this.form)">Calculate Monthly Payment</button>
             <div class="result-box">
-                <p>Your Estimated MPG:</p>
-                <p class="result" id="mpgResult">--</p>
+                <p>Estimated Monthly Payment:</p>
+                <input type="text" name="Payment" id="Payment" value="--" readonly class="result">
             </div>
+        </form>
+    </div>
+</section>
 
-            <p class="error-message" id="errorMessage"></p>
-        </div>
-    </section>
-    <section id="mortgage-calculator" class="container">
-        <h2>Home Mortgage Calculator 🏠</h2>
-        
-        <p class="bio-text" style="font-size: 1em; color: #333;">
-            To use the Home Mortgage Calculator, enter the **amount of the mortgage** (e.g., 200000), the **annual interest rate** (e.g., 6.5), and the **total number of years** (e.g., 30).
-        </p>
+<section id="about" class="container">
+    <h2>About Me</h2>
+    <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security...</p>
+</section>
 
-        <div class="calculator-card">
-            
-            <form name="Form1">
-                <div class="input-group">
-                    <label for="Amount">Mortgage Amount (No $, No commas):</label>
-                    <input type="text" name="Amount" id="Amount" placeholder="e.g., 200000">
-                </div>
-                
-                <div class="input-group">
-                    <label for="Rate">Annual Interest Rate (%):</label>
-                    <input type="text" name="Rate" id="Rate" placeholder="e.g., 6.5">
-                </div>
-                
-                <div class="input-group">
-                    <label for="Years">Years for Loan:</label>
-                    <input type="text" name="Years" id="Years" placeholder="e.g., 30">
-                </div>
-                
-                <button type="button" onclick="mortCalc(this.form)">Calculate Monthly Payment</button>
-                
-                <div class="result-box">
-                    <p>Estimated Monthly Payment:</p>
-                    <input type="text" name="Payment" id="Payment" value="--" readonly class="result">
-                </div>
-            </form>
-        </div>
-    </section>
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security! I'm also a full time Help Desk Technician and Calisthenics athlete. This section provides more detail on my background and interests.</p>
-        </section>
+<section id="projects" class="container">
+    <h2>Projects & Skills</h2>
+    <div id="networking"><h3>Networking Projects 🌐</h3><p>Configured a secure AD network...</p></div>
+    <div id="security"><h3>Cybersecurity Focus 🔒</h3><p>Built a lab with Ubuntu, Splunk, Kali...</p></div>
+    <div id="webdev"><h3>Web Development Skills 💻</h3><p>Proficient in HTML, CSS, JS...</p></div>
+</section>
 
-    <section id="projects" class="container">
-        <h2>Projects & Skills</h2>
-        <p>Explore my technical expertise and completed projects below.</p>
-        
-        <div id="networking">
-            <h3>Networking Projects 🌐</h3>
-            <p>I configured a secure network and domain within VMWare utilizing Active Directory.</p>
-        </div>
-        
-        <div id="security">
-            <h3>Cybersecurity Focus 🔒</h3>
-            <p>I have built a lab with Ubuntu, Splunk, and Kali Linux to simulate penetration testing with machines on an Active Directory network utilizing Atomic Red Team.</p>
-        </div>
-        <div id="webdev">
-             <h3>Web Development Skills 💻</h3>
-             <p>Proficient in HTML, CSS, JavaScript (as shown by the MPG and Mortgage calculators and slider).</p>
-        </div>
+<section id="career" class="container">
+    <h2>Career Experience</h2>
+    <p>Help Desk Technician providing Tier 1/2 support...</p>
+</section>
 
-    </section>
+<section id="calisthenics" class="container">
+    <h2>Calisthenics Journey 💪</h2>
+    <p>Dedicated calisthenics athlete...</p>
+</section>
 
-    <section id="career" class="container">
-        <h2>Career Experience</h2>
-        <p>I currently work as a Help Desk Technician, providing Tier 1 and Tier 2 support, troubleshooting hardware and software issues, and managing user accounts in Active Directory.</p>
-        <p>My career goal is to transition into a Cybersecurity Analyst role.</p>
-    </section>
+<section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <p>Connect via LinkedIn or GitHub below.</p>
+</section>
 
-    <section id="calisthenics" class="container">
-        <h2>Calisthenics Journey 💪</h2>
-        <p>Beyond tech, I am a dedicated calisthenics athlete. This discipline emphasizes bodyweight training for strength, endurance, and flexibility.</p>
-        <p>Current goals include mastering the human flag and the one-arm pull-up.</p>
-    </section>
+<footer>
+    <div class="links">
+        <a href="https://github.com/jamjam8148/BIS23_Marjam_Shahjalal">Github</a>
+        <a href="https://www.linkedin.com/in/marjam-shahjalal-39b9b1245/">LinkedIn</a>
+    </div>
+    <p>&copy; 2012 All Rights Reserved</p>
+</footer>
 
-    <section id="contact" class="container">
-        <h2>Contact Me</h2>
-        <p>I am always open to networking and professional inquiries.</p>
-        <p>Connect with me via LinkedIn or GitHub, as linked below</p>
-    </section>
+<script>
+function calculateCoaching() {
+    let weeks = parseInt(document.getElementById('weeks').value);
+    let calls = parseInt(document.getElementById('calls').value);
+    let checks = parseInt(document.getElementById('form-checks').value);
+    let error = document.getElementById('coaching-error');
+    let resultBox = document.getElementById('coaching-result-box');
+    let result = document.getElementById('coaching-result');
 
-    <footer>
-        <div class="links">
-            <a href="https://github.com/jamjam8148/BIS23_Marjam_Shahjalal">Github</a>
-            <a href="https://www.linkedin.com/in/marjam-shahjalal-39b9b1245/">LinkedIn</a>
-        </div>
-        <div class="copyright">
-            <p>&copy; Copyright All Rights Reserved 2012</p>
-        </div>
-    </footer>
+    error.textContent = "";
+    resultBox.style.display = "none";
 
-    <script>
-        // --- START MPG Calculator JavaScript (Existing & Unchanged) ---
-        
-        /**
-         * Calculates the Miles Per Gallon (MPG) based on user input.
-         */
-        function calculateMPG() {
-            const milesTraveledInput = document.getElementById('milesTraveled').value;
-            const gallonsUsedInput = document.getElementById('gallonsUsed').value;
-            
-            const mpgResultElement = document.getElementById('mpgResult');
-            const errorMessageElement = document.getElementById('errorMessage');
+    if (isNaN(weeks) || weeks <= 0) {
+        error.textContent = "Please enter a valid number of weeks.";
+        return;
+    }
 
-            mpgResultElement.textContent = '--';
-            errorMessageElement.textContent = '';
-            
-            const milesTraveled = parseFloat(milesTraveledInput);
-            const gallonsUsed = parseFloat(gallonsUsedInput);
+    let price = weeks * 25 + calls * 15 + checks * 5;
+    result.textContent = "$" + price.toFixed(2);
+    resultBox.style.display = "block";
+}
+</script>
 
-            if (isNaN(milesTraveled) || isNaN(gallonsUsed) || milesTraveled <= 0 || gallonsUsed <= 0) {
-                errorMessageElement.textContent = 'Please enter valid, positive numbers for both Miles Traveled and Gallons Used.';
-                return;
-            }
-
-            const milesPerGallon = milesTraveled / gallonsUsed;
-
-            mpgResultElement.textContent = milesPerGallon.toFixed(2) + ' MPG';
-        }
-
-        // --- START Image Slider JavaScript (FIXED AND COMPLETED) ---
-
-        // Use 'let' for variables that will be reassigned (current slide index and timeout)
-        let slideIndex = 1; // Start with the first slide (1-based index)
-        let autoSlideTimeout; // Stores the timer ID for auto-play
-        const SLIDE_INTERVAL = 4000; // Auto-play interval in milliseconds (4 seconds)
-
-        /**
-         * Function to change the current slide index manually (forward/backward)
-         * @param {number} n - The number of slides to move (1 for next, -1 for previous)
-         */
-        function plusSlides(n) {
-            // Clear the existing auto-play timer on manual navigation
-            clearTimeout(autoSlideTimeout); 
-            // Update the slide index and display the new slide
-            showSlides(slideIndex += n);
-            // Restart the auto-play timer after a manual change
-            autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL);
-        }
-
-        /**
-         * Function to display the correct slide, handling wrap-around logic.
-         * @param {number | undefined} n - The index of the slide to display. If undefined, it runs for auto-play.
-         */
-        function showSlides(n) {
-            // Use 'let' for the loop counter 'i'
-            let i; 
-            // DOM Manipulation: Get all elements with class "mySlides"
-            const slides = document.getElementsByClassName("mySlides");
-
-            if (slides.length === 0) {
-                console.error("No slides found. Check class name 'mySlides' in HTML.");
-                return;
-            }
-
-            // 1. Handle wrap-around for manual control (n is defined)
-            if (n !== undefined) {
-                if (n > slides.length) { 
-                    slideIndex = 1; // Wrap from last to first
-                }    
-                if (n < 1) { 
-                    slideIndex = slides.length; // Wrap from first to last
-                }
-            } else {
-                // 2. Handle auto-play iteration (n is undefined)
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1; // Wrap from last to first for auto-play
-                }
-            }
-            
-            // DOM Manipulation: Hide all slides using a 'for' loop
-            // 'for' loop to iterate through the collection of slides
-            for (i = 0; i < slides.length; i++) {  
-                slides[i].style.display = "none";  
-            }
-            
-            // DOM Manipulation: Display the current slide (slideIndex is 1-based, array is 0-based)
-            slides[slideIndex - 1].style.display = "block";  
-        }
-        
-        /**
-         * Function for auto-play: automatically increments and calls showSlides.
-         */
-        function autoPlaySlides() {
-            showSlides(); 
-            // Set a new timer to call itself recursively
-            autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL);
-        }
-
-        // 2. Initial setup (Run once when the page loads)
-        showSlides(1); // Start by showing the first slide (1-based index)
-        autoSlideTimeout = setTimeout(autoPlaySlides, SLIDE_INTERVAL); // Start the auto-play timer
-
-        // --- END Image Slider JavaScript ---
-    </script>
 </body>
 </html>
