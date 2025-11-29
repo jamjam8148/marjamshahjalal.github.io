@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="mortgage_calculator.js"></script>
 </head>
 <body>
@@ -23,7 +25,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#mpg-calculator">MPG Calculator</a></li>
-                <li><a href="#mortgage-calculator">Mortgage Calculator</a></li>
+                <li><a href="#item-price-calculator">Item Calculator</a></li> <li><a href="#mortgage-calculator">Mortgage Calculator</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li>
                     <a href="#projects">Projects & Skills</a>
@@ -69,7 +71,7 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        </div> 
+    </div> 
 
     <section id="mpg-calculator" class="container">
         <h2>Miles Per Gallon (MPG) Calculator ⛽</h2>
@@ -92,6 +94,82 @@
             </div>
 
             <p class="error-message" id="errorMessage"></p>
+        </div>
+    </section>
+
+    <section id="item-price-calculator" class="container">
+        <h2>Item Total Price Calculator 🧾</h2>
+        <p class="bio-text" style="font-size: 1em; color: #333;">
+            Enter the **quantity** for each ingredient to calculate the total price. Unit prices are fixed.
+        </p>
+
+        <div class="calculator-card item-price-card">
+            
+            <div class="row header-row">
+                <div class="col-6">Item Name</div>
+                <div class="col-3">Quantity (Qty)</div>
+                <div class="col-2">Price ($)</div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    1. Powdered white sugar (cups)
+                </div>
+                <div class="col-3">
+                    <input type="number" value="0" min="0" class="qty" id="qty_sugar" />
+                </div>
+                <div class="col-2">
+                    <input type="number" readonly value="0" id="price_sugar" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    2. Unsalted butter (sticks)
+                </div>
+                <div class="col-3">
+                    <input type="number" value="0" min="0" class="qty" id="qty_butter" />
+                </div>
+                <div class="col-2">
+                    <input type="number" readonly value="0" id="price_butter" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    3. Large Eggs (units)
+                </div>
+                <div class="col-3">
+                    <input type="number" value="0" min="0" class="qty" id="qty_eggs" />
+                </div>
+                <div class="col-2">
+                    <input type="number" readonly value="0" id="price_eggs" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    4. Vanilla Extract (tsp)
+                </div>
+                <div class="col-3">
+                    <input type="number" value="0" min="0" class="qty" id="qty_vanilla" />
+                </div>
+                <div class="col-2">
+                    <input type="number" readonly value="0" id="price_vanilla" />
+                </div>
+            </div>
+
+            <div class="row total-row">
+                <div class="col-6">
+                    <strong>Total Order Price:</strong>
+                </div>
+                <div class="col-3">
+                    </div>
+                <div class="col-2">
+                    <span id="total_value" class="result">0</span>
+                </div>
+            </div>
+
         </div>
     </section>
     <section id="mortgage-calculator" class="container">
@@ -129,47 +207,19 @@
         </div>
     </section>
     <section id="about" class="container">
-        <h2>About Me</h2>
-        <p class="bio-text">My name is Marjam, and I'm a student majoring in Computer Systems with a specialty in networking and security! I'm also a full time Help Desk Technician and Calisthenics athlete. This section provides more detail on my background and interests.</p>
         </section>
 
     <section id="projects" class="container">
-        <h2>Projects & Skills</h2>
-        <p>Explore my technical expertise and completed projects below.</p>
-        
-        <div id="networking">
-            <h3>Networking Projects 🌐</h3>
-            <p>I configured a secure network and domain within VMWare utilizing Active Directory.</p>
-        </div>
-        
-        <div id="security">
-            <h3>Cybersecurity Focus 🔒</h3>
-            <p>I have built a lab with Ubuntu, Splunk, and Kali Linux to simulate penetration testing with machines on an Active Directory network utilizing Atomic Red Team.</p>
-        </div>
-        <div id="webdev">
-             <h3>Web Development Skills 💻</h3>
-             <p>Proficient in HTML, CSS, JavaScript (as shown by the MPG and Mortgage calculators and slider).</p>
-        </div>
-
-    </section>
+        </section>
 
     <section id="career" class="container">
-        <h2>Career Experience</h2>
-        <p>I currently work as a Help Desk Technician, providing Tier 1 and Tier 2 support, troubleshooting hardware and software issues, and managing user accounts in Active Directory.</p>
-        <p>My career goal is to transition into a Cybersecurity Analyst role.</p>
-    </section>
+        </section>
 
     <section id="calisthenics" class="container">
-        <h2>Calisthenics Journey 💪</h2>
-        <p>Beyond tech, I am a dedicated calisthenics athlete. This discipline emphasizes bodyweight training for strength, endurance, and flexibility.</p>
-        <p>Current goals include mastering the human flag and the one-arm pull-up.</p>
-    </section>
+        </section>
 
     <section id="contact" class="container">
-        <h2>Contact Me</h2>
-        <p>I am always open to networking and professional inquiries.</p>
-        <p>Connect with me via LinkedIn or GitHub, as linked below</p>
-    </section>
+        </section>
 
     <footer>
         <div class="links">
@@ -182,6 +232,74 @@
     </footer>
 
     <script>
+        // ... Existing JavaScript (MPG, Slider, etc.) ...
+        
+        // --- START NEW Item Price Calculator JavaScript (Requires jQuery) ---
+        
+        /**
+         * Calculates the individual item prices and the grand total price.
+         */
+        function calculateTotal()
+        {
+          // Unit prices for each item
+          const unit_price = {
+            sugar: 22,
+            butter: 12,
+            eggs: 2,
+            vanilla:43    
+          };
+
+          // Object to hold the calculated price for each item
+          let item_price = {};
+          
+          // Helper function to get the quantity, convert it to a number (or 0 if invalid), 
+          // and calculate the item price.
+          const calculateItemPrice = (item, priceKey) => {
+            // Use parseFloat to allow for decimal quantities, default to 0 if NaN or empty
+            const qty = parseFloat($("#qty_" + item).val()) || 0; 
+            
+            // Calculate the item price (Quantity * Unit Price)
+            const calculatedPrice = qty * unit_price[item];
+
+            // Store the calculated price, rounded to 2 decimal places for currency
+            item_price[item] = parseFloat(calculatedPrice.toFixed(2));
+
+            // Set the result value in the price input field
+            $("#price_" + item).val(item_price[item].toFixed(2));
+          };
+          
+          // Calculate price for each item
+          calculateItemPrice("sugar", unit_price.sugar);
+          calculateItemPrice("butter", unit_price.butter);
+          calculateItemPrice("eggs", unit_price.eggs);
+          calculateItemPrice("vanilla", unit_price.vanilla);
+          
+          // Calculate the total by summing up all item prices
+          let total = item_price.sugar + item_price.butter + item_price.eggs + item_price.vanilla;
+
+          // Round the total to 2 decimal places for display
+          total = total.toFixed(2);
+          
+          // Set the value of the "total" span
+          $("#total_value").text(total);
+        }
+
+        // Event Handling: This runs the calculation whenever a quantity input field 
+        // with the class "qty" changes (change event) or a key is released (keyup event).
+        // The $(function() { ... }) is jQuery's document ready shortcut.
+        $(function()
+        {
+           $(".qty").on("change keyup", calculateTotal);
+        });
+
+        // Initialize the calculation on page load to set the initial prices (all 0)
+        $(document).ready(function() {
+            calculateTotal();
+        });
+        
+        // --- END NEW Item Price Calculator JavaScript ---
+
+
         // --- START MPG Calculator JavaScript (Existing & Unchanged) ---
         
         /**
